@@ -1,0 +1,29 @@
+items:
+    -
+        title: Movies
+        type: cms-page
+        code: ''
+        reference: movies
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Login
+        type: cms-page
+        code: ''
+        reference: login
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Actor Add'
+        type: cms-page
+        code: ''
+        reference: actor-add
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: footer

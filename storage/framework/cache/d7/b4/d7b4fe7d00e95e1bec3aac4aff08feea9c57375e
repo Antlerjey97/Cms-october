@@ -1,0 +1,85 @@
+1573639489a:1:{s:10:"movies.htm";a:9:{s:8:"fileName";s:10:"movies.htm";s:7:"content";s:738:"title = "Movies"
+url = "/movies/:page?"
+layout = "default"
+is_hidden = 0
+
+==
+<? use Learn\Movie\Models\Movie;
+
+ function onStart(){
+
+  $this['movies']=Movie::orderBy('year','desc')->paginate(20);
+
+
+}
+
+?>
+==
+
+
+<!--[session]-->
+<!--security = "user"-->
+<!--redirect = "login"-->
+<!--==-->
+
+
+<ul class="movie-list">
+    {% for movie in movies %}
+    <li><h3>
+        <a href="movie/{{movie.slug}}"> {{movie.name }}-{{movie.year}}</a>
+
+
+        <br>
+
+
+        <img src="{{movie.poster.path }}" alt="">
+        {{html_limit(movie.desicription,300)|raw}}</h3>
+
+    </li>
+
+    {% else %}
+    <li class="no-data">No Movies found</li>
+
+
+    {% endfor %}
+</ul>
+
+<div>{{movies.render|raw}}</div>
+
+
+
+";s:5:"mtime";i:1573100972;s:6:"markup";s:502:"<!--[session]-->
+<!--security = "user"-->
+<!--redirect = "login"-->
+<!--==-->
+
+
+<ul class="movie-list">
+    {% for movie in movies %}
+    <li><h3>
+        <a href="movie/{{movie.slug}}"> {{movie.name }}-{{movie.year}}</a>
+
+
+        <br>
+
+
+        <img src="{{movie.poster.path }}" alt="">
+        {{html_limit(movie.desicription,300)|raw}}</h3>
+
+    </li>
+
+    {% else %}
+    <li class="no-data">No Movies found</li>
+
+
+    {% endfor %}
+</ul>
+
+<div>{{movies.render|raw}}</div>";s:4:"code";s:127:" use Learn\Movie\Models\Movie;
+
+ function onStart(){
+
+  $this['movies']=Movie::orderBy('year','desc')->paginate(20);
+
+
+}";s:5:"title";s:6:"Movies";s:3:"url";s:14:"/movies/:page?";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";}}

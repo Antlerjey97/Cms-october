@@ -1,0 +1,21 @@
+plugin:
+    name: 'learn.movie::lang.plugin.name'
+    description: 'learn.movie::lang.plugin.description'
+    author: learn
+    icon: oc-icon-video-camera
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Movies
+        url: learn/movie/movies
+        icon: icon-video-camera
+        order: ''
+        sideMenu:
+            side-menu-item:
+                label: Genres
+                url: learn/movie/genres
+                icon: icon-tag
+            side-menu-item2:
+                label: Actors
+                url: learn/movie/actor
+                icon: icon-user

@@ -1,0 +1,22 @@
+title = "movie single"
+url = "/movie/:slug"
+layout = "default"
+is_hidden = 0
+==
+<?php
+use Learn\Movie\Models\Movie;
+
+ function onStart(){
+    $this['movie']=Movie::where('slug','=',$this->param('slug'))->first();
+
+}
+?>
+==
+<h3>
+    {% if movie %}
+    <a href=""> {{movie.name}}- {{movie.year}}</a>
+    {% else %}
+    {{ notFoundMessage }}
+    {% endif %}
+</h3>
+{{movie.desicription|raw}}

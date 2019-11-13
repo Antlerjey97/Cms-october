@@ -1,0 +1,51 @@
+1573639519a:1:{s:17:"movies/movies.htm";a:5:{s:8:"fileName";s:17:"movies/movies.htm";s:7:"content";s:588:"{% if movies|length %}
+
+{% for movie in movies %}
+<div class="ui segment vertical">
+    <h3 class="ui header">{{movie.name}}</h3>
+    <div class="ui">{{ movie.year }}</div>
+
+    <div class="ui segment">
+        <ul class="ui list bulleted horizontal">
+            {% for genre in movie.genres %}
+            <li class="item">{{ genre.genre_title }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endfor %}
+
+{% else %}
+
+<div class="ui message text-center">
+    <p>
+        There are no movies that match the criteria.
+    </p>
+</div>
+
+{% endif %}";s:5:"mtime";i:1572941448;s:6:"markup";s:588:"{% if movies|length %}
+
+{% for movie in movies %}
+<div class="ui segment vertical">
+    <h3 class="ui header">{{movie.name}}</h3>
+    <div class="ui">{{ movie.year }}</div>
+
+    <div class="ui segment">
+        <ul class="ui list bulleted horizontal">
+            {% for genre in movie.genres %}
+            <li class="item">{{ genre.genre_title }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endfor %}
+
+{% else %}
+
+<div class="ui message text-center">
+    <p>
+        There are no movies that match the criteria.
+    </p>
+</div>
+
+{% endif %}";s:4:"code";N;}}

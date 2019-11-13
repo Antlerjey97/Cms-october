@@ -1,0 +1,10 @@
+name: Genres
+form: $/learn/movie/models/genre/fields.yaml
+modelClass: Learn\Movie\Models\Genre
+defaultRedirect: learn/movie/genres
+create:
+    redirect: 'learn/movie/genres/update/:id'
+    redirectClose: learn/movie/genres
+update:
+    redirect: learn/movie/genres
+    redirectClose: learn/movie/genres

@@ -1,0 +1,32 @@
+columns:
+    id:
+        label: ID
+        type: text
+        searchable: false
+        sortable: true
+    year:
+        label: Year
+        type: number
+        sortable: true
+    name:
+        label: Name
+        type: number
+        searchable: true
+        sortable: true
+    desicription:
+        label: Desicription
+        type: text
+        searchable: false
+        sortable: true
+    genres:
+        label: Geners
+        type: text
+        searchable: true
+        select: genre_title
+        relation: genres
+    created_at:
+        label: Createdat
+        type: datetime
+    pulished:
+        label: Pulished
+        type: switch

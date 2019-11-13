@@ -1,0 +1,70 @@
+title = "Login"
+url = "/login"
+layout = "default"
+is_hidden = 0
+
+[account]
+paramCode = "code"
+forceSecure = 0
+==
+{% if not user %}
+
+<div class="row">
+
+    <div class="col-md-12">
+        <h3>Sign in</h3>
+        <div class="hi">
+            {% partial account ~ '::signin' %}
+        </div>
+    </div>
+
+    <div class="col-md-12">
+
+        {% partial account ~ '::register' %}
+
+    </div>
+
+</div>
+
+{% else %}
+
+{% partial account ~ '::activation_check' %}
+
+{% partial 'user-update' %}
+
+{% partial account ~ '::deactivate_link' %}
+
+{% endif %}
+
+
+<style>   .hi {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+</style>
+

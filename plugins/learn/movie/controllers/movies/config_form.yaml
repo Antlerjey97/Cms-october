@@ -1,0 +1,10 @@
+name: Movies
+form: $/learn/movie/models/movie/fields.yaml
+modelClass: Learn\Movie\Models\Movie
+defaultRedirect: learn/movie/movies
+create:
+    redirect: 'learn/movie/movies/update/:id'
+    redirectClose: learn/movie/movies
+update:
+    redirect: learn/movie/movies
+    redirectClose: learn/movie/movies

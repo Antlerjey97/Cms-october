@@ -1,0 +1,19 @@
+1573639519a:1:{s:19:"movies/paginate.htm";a:5:{s:8:"fileName";s:19:"movies/paginate.htm";s:7:"content";s:294:"<label>Page</label>
+<select class="ui fluid dropdown" name="Filter[page]">
+    {% for i in 1..pages %}
+    {%  if i == page %}
+    <option value="{{page}}" selected>{{ page }}</option>
+    {% else %}
+    <option value="{{i}}">{{ i }}</option>
+    {% endif %}
+    {% endfor %}
+</select>";s:5:"mtime";i:1573113377;s:6:"markup";s:294:"<label>Page</label>
+<select class="ui fluid dropdown" name="Filter[page]">
+    {% for i in 1..pages %}
+    {%  if i == page %}
+    <option value="{{page}}" selected>{{ page }}</option>
+    {% else %}
+    <option value="{{i}}">{{ i }}</option>
+    {% endif %}
+    {% endfor %}
+</select>";s:4:"code";N;}}

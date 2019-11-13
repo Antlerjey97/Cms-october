@@ -1,0 +1,10 @@
+name: Actor
+form: $/learn/movie/models/actor/fields.yaml
+modelClass: Learn\Movie\Models\Actor
+defaultRedirect: learn/movie/actor
+create:
+    redirect: 'learn/movie/actor/update/:id'
+    redirectClose: learn/movie/actor
+update:
+    redirect: learn/movie/actor
+    redirectClose: learn/movie/actor

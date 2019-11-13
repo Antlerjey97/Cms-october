@@ -1,0 +1,206 @@
+1573639489a:1:{s:12:"homepage.htm";a:12:{s:8:"fileName";s:12:"homepage.htm";s:7:"content";s:5146:"title = "Homepage"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[actors]
+sort = "id asc"
+
+[siteSearchInclude]
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
+==
+<?php
+use Learn\Movie\Models\Movie;
+
+ function onStart(){
+    $this['movies']=Movie::take(4)->get();
+
+}
+?>
+==
+<form action="{{ 'search' | page }}" method="get">
+    <input name="q" type="text" placeholder="What are you looking for?" autocomplete="off">
+    <button type="submit">Search</button>
+</form>
+<div class="container clearfix"><h2>Hello World</h2>
+
+    <!--[session]-->
+    <!--security = "user"-->
+    <!--redirect = "login"-->
+    <!--==-->
+
+
+    <ul class="movie-list">
+        {% for movie in movies %}
+        <li><h3>
+            <a href="movie/{{movie.slug}}"> {{movie.name }}-{{movie.year}}</a>
+
+
+            <br>
+
+
+            <img src="{{movie.poster.path }}" alt="">
+            {{html_limit(movie.desicription,300)|raw}}</h3>
+
+        </li>
+
+        {% else %}
+        <li class="no-data">No Movies found</li>
+
+
+        {% endfor %}
+    </ul>
+
+    <div>{{movies.render|raw}}</div>
+
+    {% set actors =actors.actors %}
+
+    <ul>
+
+        {% for actor in actors %}
+        <li>{{actor.name}} - {{actor.lastname}}- <img src="{{actor.actorimage.path}}" alt=""></li>
+
+        {% endfor %}
+    </ul>
+
+    <!--{%  set actors = actors.actors %}-->
+
+    <!--<ul>-->
+    <!--    {% for actor in actors %}-->
+    <!--    <li>{{ actor.name }} {{ actor.lastname }}</li>-->
+    <!--    {% endfor %}-->
+    <!--</ul>-->{% component 'searchInput' %}
+    {% component 'siteSearchInclude' %}
+
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum."</p>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum."</p>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum."</p>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum."</p>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum."</p>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum."</p>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum."</p></div>";s:5:"mtime";i:1573100972;s:6:"markup";s:4815:"<form action="{{ 'search' | page }}" method="get">
+    <input name="q" type="text" placeholder="What are you looking for?" autocomplete="off">
+    <button type="submit">Search</button>
+</form>
+<div class="container clearfix"><h2>Hello World</h2>
+
+    <!--[session]-->
+    <!--security = "user"-->
+    <!--redirect = "login"-->
+    <!--==-->
+
+
+    <ul class="movie-list">
+        {% for movie in movies %}
+        <li><h3>
+            <a href="movie/{{movie.slug}}"> {{movie.name }}-{{movie.year}}</a>
+
+
+            <br>
+
+
+            <img src="{{movie.poster.path }}" alt="">
+            {{html_limit(movie.desicription,300)|raw}}</h3>
+
+        </li>
+
+        {% else %}
+        <li class="no-data">No Movies found</li>
+
+
+        {% endfor %}
+    </ul>
+
+    <div>{{movies.render|raw}}</div>
+
+    {% set actors =actors.actors %}
+
+    <ul>
+
+        {% for actor in actors %}
+        <li>{{actor.name}} - {{actor.lastname}}- <img src="{{actor.actorimage.path}}" alt=""></li>
+
+        {% endfor %}
+    </ul>
+
+    <!--{%  set actors = actors.actors %}-->
+
+    <!--<ul>-->
+    <!--    {% for actor in actors %}-->
+    <!--    <li>{{ actor.name }} {{ actor.lastname }}</li>-->
+    <!--    {% endfor %}-->
+    <!--</ul>-->{% component 'searchInput' %}
+    {% component 'siteSearchInclude' %}
+
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum."</p>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum."</p>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum."</p>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum."</p>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum."</p>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum."</p>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum."</p></div>";s:4:"code";s:102:"use Learn\Movie\Models\Movie;
+
+ function onStart(){
+    $this['movies']=Movie::take(4)->get();
+
+}";s:5:"title";s:8:"Homepage";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:6:"actors";a:1:{s:4:"sort";s:6:"id asc";}s:17:"siteSearchInclude";a:0:{}s:11:"searchInput";a:3:{s:15:"useAutoComplete";s:1:"1";s:23:"autoCompleteResultCount";s:1:"5";s:17:"showProviderBadge";s:1:"1";}}}

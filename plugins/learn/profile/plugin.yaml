@@ -1,0 +1,6 @@
+plugin:
+    name: 'learn.profile::lang.plugin.name'
+    description: 'learn.profile::lang.plugin.description'
+    author: learn
+    icon: oc-icon-adjust
+    homepage: ''

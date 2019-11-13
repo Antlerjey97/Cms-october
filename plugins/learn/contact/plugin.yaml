@@ -1,0 +1,6 @@
+plugin:
+    name: 'learn.contact::lang.plugin.name'
+    description: 'learn.contact::lang.plugin.description'
+    author: Learn
+    icon: oc-icon-adjust
+    homepage: ''

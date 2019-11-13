@@ -1,0 +1,50 @@
+title = "Movies"
+url = "/movies/:page?"
+layout = "default"
+is_hidden = 0
+
+==
+<? use Learn\Movie\Models\Movie;
+
+ function onStart(){
+
+  $this['movies']=Movie::orderBy('year','desc')->paginate(20);
+
+
+}
+
+?>
+==
+
+
+<!--[session]-->
+<!--security = "user"-->
+<!--redirect = "login"-->
+<!--==-->
+
+
+<ul class="movie-list">
+    {% for movie in movies %}
+    <li><h3>
+        <a href="movie/{{movie.slug}}"> {{movie.name }}-{{movie.year}}</a>
+
+
+        <br>
+
+
+        <img src="{{movie.poster.path }}" alt="">
+        {{html_limit(movie.desicription,300)|raw}}</h3>
+
+    </li>
+
+    {% else %}
+    <li class="no-data">No Movies found</li>
+
+
+    {% endfor %}
+</ul>
+
+<div>{{movies.render|raw}}</div>
+
+
+

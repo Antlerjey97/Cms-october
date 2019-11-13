@@ -1,0 +1,202 @@
+1573639518a:1:{s:21:"movie-filter-ajax.htm";a:9:{s:8:"fileName";s:21:"movie-filter-ajax.htm";s:7:"content";s:3295:"title = "Filter ajax"
+url = "/ajax-filter"
+layout = "default"
+is_hidden = 0
+==
+<?php
+use Learn\Movie\Models\Movie;
+            use Learn\Movie\Models\Genre;
+
+            function onStart() {
+            $this->prepareVars();
+            $this->prepareYears();
+}
+function onFilterMovies() {
+$this->prepareVars(); }
+
+
+function prepareVars() {
+$options = post('Filter', []);
+
+$this['movies'] = Movie::listFrontEnd($options);
+$this['genres'] = Genre::all();
+$this['sortOptions'] = Movie::$allowedSortingOptions;
+
+
+$this['pages'] = $this['movies']->lastPage();
+$this['page'] = $this['movies']->currentPage();
+
+
+}
+//Year -Movies
+function prepareYears() {
+$movies = Movie::all();
+$years = [];
+
+foreach($movies as $movie){
+$years[] = $movie->year;
+}
+
+$years = array_unique($years);
+
+$this['years'] = $years;
+}
+?>
+==
+<h2 class="ui header" style="margin-top: 40px">Filter Movies</h2>
+
+<div class="ui grid">
+
+
+    <div class="five wide column">
+        {{ form_ajax('onFilterMovies', { update: { 'movies/movies': '#partialMovies' } }) }}
+        <div id="MoviesFilter" class="movies-filter ui form">
+            <div class="ui segment vertical">
+                <label>Genres</label>
+                {% for genre in genres %}
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="Filter[genres]" value="{{ genre.id }}"/>
+                        <label>{{genre.genre_title}}</label>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="field">
+                    <label>Sorting</label>
+                    <select class="ui fluid dropdown" name="Filter[sort]">
+                        {% for code, option in sortOptions %}
+
+                        <option value="{{code}}">{{ option }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Year</label>
+                    <!--                    <select class="ui fluid dropdown" name="Filter[year]">-->
+                    <!--                        <option value="">Select Year</option>-->
+                    <!--                        {% for movie in movies|sort %}-->
+                    <!--                        <option value="{{movie.year}}">{{ movie.year }}</option>-->
+                    <!--                        {% endfor %}-->
+                    <!--                    </select>-->
+
+                    <select class="ui fluid dropdown" name="Filter[year]">
+                        <option value="">Select Year</option>
+                        {% for year in years |sort%}
+                        <option value="{{year}}">{{ year }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="field" id="partialPaginate">
+                    {% partial 'movies/paginate' %}
+                </div>
+            </div>
+        </div>
+        {{ form_close() }}
+    </div>
+
+    <div class="eleven wide column">
+        <div id="partialMovies">
+            {% partial 'movies/movies' %}
+        </div>
+    </div>
+
+
+</div>";s:5:"mtime";i:1573638918;s:6:"markup";s:2442:"<h2 class="ui header" style="margin-top: 40px">Filter Movies</h2>
+
+<div class="ui grid">
+
+
+    <div class="five wide column">
+        {{ form_ajax('onFilterMovies', { update: { 'movies/movies': '#partialMovies' } }) }}
+        <div id="MoviesFilter" class="movies-filter ui form">
+            <div class="ui segment vertical">
+                <label>Genres</label>
+                {% for genre in genres %}
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="Filter[genres]" value="{{ genre.id }}"/>
+                        <label>{{genre.genre_title}}</label>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="field">
+                    <label>Sorting</label>
+                    <select class="ui fluid dropdown" name="Filter[sort]">
+                        {% for code, option in sortOptions %}
+
+                        <option value="{{code}}">{{ option }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Year</label>
+                    <!--                    <select class="ui fluid dropdown" name="Filter[year]">-->
+                    <!--                        <option value="">Select Year</option>-->
+                    <!--                        {% for movie in movies|sort %}-->
+                    <!--                        <option value="{{movie.year}}">{{ movie.year }}</option>-->
+                    <!--                        {% endfor %}-->
+                    <!--                    </select>-->
+
+                    <select class="ui fluid dropdown" name="Filter[year]">
+                        <option value="">Select Year</option>
+                        {% for year in years |sort%}
+                        <option value="{{year}}">{{ year }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="field" id="partialPaginate">
+                    {% partial 'movies/paginate' %}
+                </div>
+            </div>
+        </div>
+        {{ form_close() }}
+    </div>
+
+    <div class="eleven wide column">
+        <div id="partialMovies">
+            {% partial 'movies/movies' %}
+        </div>
+    </div>
+
+
+</div>";s:4:"code";s:752:"use Learn\Movie\Models\Movie;
+            use Learn\Movie\Models\Genre;
+
+            function onStart() {
+            $this->prepareVars();
+            $this->prepareYears();
+}
+function onFilterMovies() {
+$this->prepareVars(); }
+
+
+function prepareVars() {
+$options = post('Filter', []);
+
+$this['movies'] = Movie::listFrontEnd($options);
+$this['genres'] = Genre::all();
+$this['sortOptions'] = Movie::$allowedSortingOptions;
+
+
+$this['pages'] = $this['movies']->lastPage();
+$this['page'] = $this['movies']->currentPage();
+
+
+}
+//Year -Movies
+function prepareYears() {
+$movies = Movie::all();
+$years = [];
+
+foreach($movies as $movie){
+$years[] = $movie->year;
+}
+
+$years = array_unique($years);
+
+$this['years'] = $years;
+}";s:5:"title";s:11:"Filter ajax";s:3:"url";s:12:"/ajax-filter";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";}}

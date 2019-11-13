@@ -1,0 +1,34 @@
+1573639489a:1:{s:16:"movie-single.htm";a:9:{s:8:"fileName";s:16:"movie-single.htm";s:7:"content";s:407:"title = "movie single"
+url = "/movie/:slug"
+layout = "default"
+is_hidden = 0
+==
+<?php
+use Learn\Movie\Models\Movie;
+
+ function onStart(){
+    $this['movie']=Movie::where('slug','=',$this->param('slug'))->first();
+
+}
+?>
+==
+<h3>
+    {% if movie %}
+    <a href=""> {{movie.name}}- {{movie.year}}</a>
+    {% else %}
+    {{ notFoundMessage }}
+    {% endif %}
+</h3>
+{{movie.desicription|raw}}";s:5:"mtime";i:1573100972;s:6:"markup";s:171:"<h3>
+    {% if movie %}
+    <a href=""> {{movie.name}}- {{movie.year}}</a>
+    {% else %}
+    {{ notFoundMessage }}
+    {% endif %}
+</h3>
+{{movie.desicription|raw}}";s:4:"code";s:134:"use Learn\Movie\Models\Movie;
+
+ function onStart(){
+    $this['movie']=Movie::where('slug','=',$this->param('slug'))->first();
+
+}";s:5:"title";s:12:"movie single";s:3:"url";s:12:"/movie/:slug";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";}}

@@ -1,0 +1,16 @@
+genres:
+  label: Genre
+  view:
+    list: $/learn/movie/models/genre/columns.yaml
+#    toolbarButtons: add|remove
+  manage:
+    form: $/learn/movie/models/genre/fields.yaml
+    showCheckboxes: true
+
+actor:
+  label: actor
+  view:
+      list: $/learn/movie/models/actor/columns.yaml
+      manage:
+        form: $/learn/movie/models/actor/fields.yaml
+        showSearch: true

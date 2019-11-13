@@ -1,0 +1,69 @@
+title = "Fitler Movies"
+url = "/fitler-movies"
+layout = "default"
+is_hidden = 0
+
+[filtermovies]
+==
+<?php
+use Learn\Movie\Models\Movie;
+
+ function onStart(){
+
+  $this['movies']=Movie::orderBy('year','desc')->paginate(20);
+
+
+}
+?>
+==
+{%set movies = filtermovies.movies %}
+{%set genres = filtermovies.genres %}
+<form method="get" action="{{url('fitler-movies')}}">
+
+    <div>
+        <label>Year</label>
+        <select name="year">
+            <option value="">Any</option>
+            {% for movie in movies%}
+            <option value="{{movie.year}}">{{movie.year}}</option>
+            {% endfor%}
+
+        </select>
+
+        <label>Genres</label>
+        <select name="genre">
+            <option value="">Any</option>
+            {% for genre in genres%}
+            <option value="genre.slug">{{genre.genre_title}}</option>
+            {% endfor%}
+
+        </select>
+    </div>
+    <button type="submit" class="btn-success">Filter</button>
+</form>
+
+<h2> Filter Movies</h2>
+<ul class="movie-list">
+    {% for movie in movies %}
+    <li><h3>
+        <a href="movie/{{movie.slug}}"> {{movie.name }}-{{movie.year}}</a>
+
+
+        <br>
+
+
+        <img src="{{movie.poster.path }}" alt="">
+        {{html_limit(movie.desicription,300)|raw}}</h3>
+
+
+        <br><br>
+        {% for genre in movie.genres%}
+        <small>{{genre.genre_title}}</small>
+        {% endfor%}
+    </li>
+    {% else %}
+
+    <li class="no-data">No Movies found</li>
+
+
+    {% endfor %}

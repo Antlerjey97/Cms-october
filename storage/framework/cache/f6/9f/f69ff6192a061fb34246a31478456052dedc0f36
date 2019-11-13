@@ -1,0 +1,17 @@
+1573639359a:1:{s:17:"static-pages.yaml";a:5:{s:8:"fileName";s:17:"static-pages.yaml";s:7:"content";s:498:"static-pages:
+    index: {  }
+    layouts:
+        layouts-full-image-background: {  }
+        layouts-1-column-blog: {  }
+        layouts-2-column-blog: {  }
+        layouts-basic-landing-page: {  }
+        layouts-corporate: {  }
+        layouts-full-image-carousel: {  }
+        layouts-half-page-carousel: {  }
+        layouts-jumbotron: {  }
+        layouts-team-profiles: {  }
+    subpages:
+        subpages-child-one: {  }
+        subpages-child-two: {  }
+        subpages-child-three: {  }
+";s:5:"mtime";i:1571847946;s:6:"markup";N;s:4:"code";N;}}

@@ -1,0 +1,29 @@
+description = "header"
+
+[viewBag]
+==
+<header class="main-header">
+    <div class="container clearfix">
+        <h1 class="logo">October Movies</h1>
+
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{{'homepage'|page}}">Home Page</a></li>
+                <li><a href="{{'movies'|page}}">movies</a></li>
+                <li><a href="{{ 'actor-add'|page }}">Add Actor</a></li>
+                <li><a href="{{ 'contact'|page }}">Contact</a></li>
+
+                {% if not user%}
+                <li><a href="{{ 'login'|page }}">Login</a></li>
+                {% else %}
+                <li><a href="">My Profile</a></li>
+                {% endif%}
+                {% if user %}
+                <li><a data-request="onLogout" data-request-data="redirect: '/'">Sign out</a></li>
+                {% endif %}
+
+            </ul>
+        </nav>
+    </div>
+</header>

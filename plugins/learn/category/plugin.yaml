@@ -1,0 +1,6 @@
+plugin:
+    name: 'learn.category::lang.plugin.name'
+    description: 'learn.category::lang.plugin.description'
+    author: learn
+    icon: oc-icon-video-camera
+    homepage: ''

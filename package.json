@@ -1,0 +1,28 @@
+{
+  "name": "www",
+  "version": "1.0.0",
+  "description": "Laravel Elixir",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "laravel-elixir": "^6.0.0-18",
+    "laravel-mix": "^5.0.0"
+  },
+  "dependencies": {
+    "semantic-ui-css": "^2.4.1",
+    "webpack-dev-server": "^2.11.5"
+  },
+  "keywords": []
+}

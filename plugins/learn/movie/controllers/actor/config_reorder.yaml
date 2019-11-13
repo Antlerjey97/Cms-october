@@ -1,0 +1,4 @@
+title: Actor
+modelClass: Learn\Movie\Models\Actor
+toolbar:
+    buttons: reorder_toolbar

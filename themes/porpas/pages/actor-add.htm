@@ -1,0 +1,34 @@
+title = "Actor Add"
+url = "/actor-add"
+layout = "default"
+is_hidden = 0
+
+[actorform]
+
+[session]
+security = "all"
+==
+<form method="POST" action={{url('actor-add')}} enctype="multipart/form-data" accept-charset="UTF-8">
+    <input type="hidden" name="_handler" value="onSave">
+    {{form_token() }}
+    {{form_sessionKey() }}
+    <label>Actor name</label>
+    <input type="text" name="name">
+
+    <label>Actor last name</label>
+    <input type="text" name="lastname">
+    <label>Actor Image</label>
+    <input type="file" name="actorimage">
+
+    <button type="submit">Save actor</button>
+
+    <ul>
+        {% for error in errors.all() %}
+        <li>{{error}}</li>
+        {% endfor %}
+        {% flash success %}
+        <li>{{message}}</li>
+        {% endflash %}
+
+    </ul>
+</form>

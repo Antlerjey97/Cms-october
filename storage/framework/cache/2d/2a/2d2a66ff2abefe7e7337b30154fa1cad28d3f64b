@@ -1,0 +1,57 @@
+1573639489a:1:{s:13:"actor-add.htm";a:11:{s:8:"fileName";s:13:"actor-add.htm";s:7:"content";s:815:"title = "Actor Add"
+url = "/actor-add"
+layout = "default"
+is_hidden = 0
+
+[actorform]
+
+[session]
+security = "all"
+==
+<form method="POST" action={{url('actor-add')}} enctype="multipart/form-data" accept-charset="UTF-8">
+    <input type="hidden" name="_handler" value="onSave">
+    {{form_token() }}
+    {{form_sessionKey() }}
+    <label>Actor name</label>
+    <input type="text" name="name">
+
+    <label>Actor last name</label>
+    <input type="text" name="lastname">
+    <label>Actor Image</label>
+    <input type="file" name="actorimage">
+
+    <button type="submit">Save actor</button>
+
+    <ul>
+        {% for error in errors.all() %}
+        <li>{{error}}</li>
+        {% endfor %}
+        {% flash success %}
+        <li>{{message}}</li>
+        {% endflash %}
+
+    </ul>
+</form>";s:5:"mtime";i:1573100972;s:6:"markup";s:689:"<form method="POST" action={{url('actor-add')}} enctype="multipart/form-data" accept-charset="UTF-8">
+    <input type="hidden" name="_handler" value="onSave">
+    {{form_token() }}
+    {{form_sessionKey() }}
+    <label>Actor name</label>
+    <input type="text" name="name">
+
+    <label>Actor last name</label>
+    <input type="text" name="lastname">
+    <label>Actor Image</label>
+    <input type="file" name="actorimage">
+
+    <button type="submit">Save actor</button>
+
+    <ul>
+        {% for error in errors.all() %}
+        <li>{{error}}</li>
+        {% endfor %}
+        {% flash success %}
+        <li>{{message}}</li>
+        {% endflash %}
+
+    </ul>
+</form>";s:4:"code";N;s:5:"title";s:9:"Actor Add";s:3:"url";s:10:"/actor-add";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"actorform";a:0:{}s:7:"session";a:1:{s:8:"security";s:3:"all";}}}
